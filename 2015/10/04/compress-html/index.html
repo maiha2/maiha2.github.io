@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTMLは圧縮（compressやminify）すべきか | mtdew2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="誰にも言わずにひっそり、こういう記事を先月書きました。http://mtdew2.com/2015/09/15/why-to-compress-javascript/
+誰かの役に立つとも、おもしろいとも思わなかったのでそっとしておいたのですが某氏の記事からリンクされ見られてしまったようで非常に恥ずかしいです。まとまっておらず申し訳ありません。上記記事の終盤で、HTMLはなぜ圧縮しないのか（する必要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTMLは圧縮（compressやminify）すべきか">
+<meta property="og:url" content="http://yoursite.com/2015/10/04/compress-html/index.html">
+<meta property="og:site_name" content="mtdew2">
+<meta property="og:description" content="誰にも言わずにひっそり、こういう記事を先月書きました。http://mtdew2.com/2015/09/15/why-to-compress-javascript/
+誰かの役に立つとも、おもしろいとも思わなかったのでそっとしておいたのですが某氏の記事からリンクされ見られてしまったようで非常に恥ずかしいです。まとまっておらず申し訳ありません。上記記事の終盤で、HTMLはなぜ圧縮しないのか（する必要">
+<meta property="og:updated_time" content="2015-10-04T10:00:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTMLは圧縮（compressやminify）すべきか">
+<meta name="twitter:description" content="誰にも言わずにひっそり、こういう記事を先月書きました。http://mtdew2.com/2015/09/15/why-to-compress-javascript/
+誰かの役に立つとも、おもしろいとも思わなかったのでそっとしておいたのですが某氏の記事からリンクされ見られてしまったようで非常に恥ずかしいです。まとまっておらず申し訳ありません。上記記事の終盤で、HTMLはなぜ圧縮しないのか（する必要">
+<meta name="twitter:creator" content="@mt_dew2">
+  
+    <link rel="alternative" href="/atom.xml" title="mtdew2" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-67094019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">mtdew2</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">memo</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-home-icon" class="nav-icon" href="/"></a>
+        
+          <a id="nav-archives-icon" class="nav-icon" href="/archives"></a>
+        
+          <a id="nav-about-icon" class="nav-icon" href="/about"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-compress-html" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTMLは圧縮（compressやminify）すべきか
+    </h1>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-10-04T09:10:18.000Z" itemprop="datePublished">10-04-2015</time>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/memo/">memo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>誰にも言わずにひっそり、こういう記事を先月書きました。<br><a href="http://mtdew2.com/2015/09/15/why-to-compress-javascript/" target="_blank" rel="external">http://mtdew2.com/2015/09/15/why-to-compress-javascript/</a></p>
+<p>誰かの役に立つとも、おもしろいとも思わなかったのでそっとしておいたのですが某氏の記事からリンクされ見られてしまったようで非常に恥ずかしいです。<br>まとまっておらず申し訳ありません。<br>上記記事の終盤で、HTMLはなぜ圧縮しないのか（する必要がないのか）というようなことを書き、それについて@webcre8さんに相談にのってもらっていたので、そこを改めて書こうと思います。</p>
+<h2 id="HTML_ファイルは圧縮しないの…？">HTML ファイルは圧縮しないの…？</h2><p>私が普段、他所様のソースコードを拝見する限りでは圧縮しているものもありますし、していないものもあるが、圧倒的にHTMLファイルのソースコードは圧縮していないことが多いような気がしていました。<br>（CSS/JSは圧縮しているのに！）</p>
+<p>で、その疑問を深夜の@webcre8さんに投げかけたところ、氏の書いているブログの<a href="http://webcre8.jp/investigate/html-implied-specifications.html#title4" target="_blank" rel="external">http://webcre8.jp/investigate/html-implied-specifications.html#title4</a>こちらの記事の「要素間ホワイトスペース」にあるようなことをお教え下さいました。</p>
+<h3 id="HTMLには要素間ホワイトスペースが存在する">HTMLには要素間ホワイトスペースが存在する</h3><p>上記記事には、</p>
+<blockquote>
+<p>スペースは通常半角を使うと思いますが、ここで代わりに全角スペースを使うと、それは要素間ホワイトスペースとはみなされません。それを利用して自由に間隔をとる人もいたりするのですが、半角スペースは改行やインデントの様に記号として存在するものであり、全角スペースは日本語にしか存在しないれっきとした文字です。見えないひらがなを置いているのと同じで、タグとタグの間にあるべきものではありません。<br>と書いてあります。<br>さらに、<br>要素と要素の間にある連続したスペース、タブ、改行タグは全て一つの要素間ホワイトスペースと見なされているからです。<br>だそうです。</p>
+</blockquote>
+<p>この説明を踏まえて、「HTMLを圧縮してスペースや改行を取り除いたHTMLのソースコードは、圧縮の前後で全く同じHTMLのソースコードは言えない。」というお話です。</p>
+<p>そして、この記事ではこのあと、<code>display: inline;</code>や<code>display: inline-block;</code>を使ったリストの横並び表示をした際に、横並びのリスト間に隙間ができることについて説明されています。</p>
+<blockquote>
+<p>前述の説明で、なぜ横並びのリストの間に隙間が出来るかがわかったと思います。これはli要素をインライン扱いにしたことによってli要素間に要素間ホワイトスペースができている、というわけです。</p>
+</blockquote>
+<p>この隙間の話は今回置いておきますが、圧縮する・しないの話に戻すと、<br><code>display: inline;</code>や<code>display: inline-block;</code>を「改行付きのリストに指定したもの」を圧縮し、「改行が削除」されると、圧縮の前後で同じ表示になるとは言えない。<br>実際に、このときの隙間をなくすために、あえて改行をせずに<code>&lt;li&gt;</code>タグを並べる場合もある。（結局隙間の話をだしてしまいました。）<br>というお話をしていただきました。</p>
+<h3 id="preの話"><code>pre</code>の話</h3><p>あとは<code>&lt;pre&gt;</code>の話です。<code>&lt;pre&gt;</code>内は改行もスペースもソースコード通りに表示されますね。<br>そこで、ぐぐって出てきたHTMLソースコードの圧縮ツールをいくつか試してみたのですが、試したものは全て<code>&lt;pre&gt;</code>内の改行も削除されてしまい、当然そのHTMLファイルを表示すると、元々意図的に改行やらスペースを含めていた<code>&lt;pre&gt;</code>内とは異なる、それらが削除されたものが表示されるわけです。当然ですが。<br>見ていた見ていた<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんの記事ページのソースコードを見ると、<code>&lt;pre&gt;</code>内のみ改行やスペースが保持され、それ以外の改行やスペースは削除されていました。（さらっと見たので、違うかもしれません。）<br>この<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんのような圧縮であれば、<code>&lt;pre&gt;</code>内は正しく表示され、その他の表示に大きな影響はないのだろうと思います。</p>
+<h3 id="preのスペース・改行を保持したとしても"><code>pre</code>のスペース・改行を保持したとしても</h3><p>話を少し戻して、@webcre8さんの記事にあった「要素間ホワイトスペース」の存在を考えると、HTMLのソースコードを圧縮した場合、前後のソースコードが同じものとは言えないのでしょう。（多分？）<br>正直しっくりこない部分もあるのですが、以上のような理由で圧縮ツールにかけないほうがよさそう（<code>&lt;pre&gt;</code>内のスペースや改行が削除されてしまうツールも多いので）ということでこの件は一旦終わりにしました。</p>
+<p>もし違う意見がある方がいらっしゃいましたら、お聞かせいただけますと嬉しいです。</p>
+<p>おわり！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/04/compress-html/" data-id="cifcc83rl000b7vw3nyhvp5g7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/15/why-to-compress-javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScriptのファイル内容を圧縮する理由など</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Maiha Takahashi<br>
+      <a href="https://github.com/steven5538/hexo-theme-athena" target="_blank">Athena</a> by <a href="http://steven5538.tw" target="_blank">Steven5538</a> | Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
