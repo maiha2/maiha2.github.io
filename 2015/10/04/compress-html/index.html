@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="mtdew2">
 <meta property="og:description" content="誰にも言わずにひっそり、こういう記事を先月書きました。http://mtdew2.com/2015/09/15/why-to-compress-javascript/
 誰かの役に立つとも、おもしろいとも思わなかったので、そっとしておいたのですが某氏の記事からリンクしていただき、思ってたより多くの方の目に触れることになったようで非常に恥ずかしいです。まとまっておらず申し訳ありません。ひっそり書いた記">
-<meta property="og:updated_time" content="2015-10-05T05:10:12.000Z">
+<meta property="og:updated_time" content="2015-10-06T08:17:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTMLは圧縮（compressやminify）すべきか">
 <meta name="twitter:description" content="誰にも言わずにひっそり、こういう記事を先月書きました。http://mtdew2.com/2015/09/15/why-to-compress-javascript/
@@ -98,8 +98,8 @@
       
         <p>誰にも言わずにひっそり、こういう記事を先月書きました。<br><a href="http://mtdew2.com/2015/09/15/why-to-compress-javascript/" target="_blank" rel="external">http://mtdew2.com/2015/09/15/why-to-compress-javascript/</a></p>
 <p>誰かの役に立つとも、おもしろいとも思わなかったので、そっとしておいたのですが<br><a href="http://debiru.hatenablog.com/entry/20151002/css-back-to-basics" target="_blank" rel="external">某氏の記事</a>からリンクしていただき、思ってたより多くの方の目に触れることになったようで非常に恥ずかしいです。<br>まとまっておらず申し訳ありません。<br>ひっそり書いた記事の終盤で、HTMLはなぜ圧縮しないのか（する必要がないのか）というようなことを書き、それについて@webcre8さんに相談にのってもらっていたので、そこを改めて書こうと思います。</p>
-<h2 id="HTML_ファイルは圧縮しないの…？">HTML ファイルは圧縮しないの…？</h2><p>私が普段、他所様のソースコードを拝見する限りでは圧縮しているものもありますし、していないものもあるが、圧倒的にHTMLファイルのソースコードは圧縮していないことが多いような気がしていました。<br>（CSS/JSは圧縮しているのに！）</p>
-<p>で、その疑問を深夜の@webcre8さんに投げかけたところ、氏の書いているブログの<a href="http://webcre8.jp/investigate/html-implied-specifications.html#title4" target="_blank" rel="external">http://webcre8.jp/investigate/html-implied-specifications.html#title4</a>こちらの記事の「要素間ホワイトスペース」にあるようなお話をしてくださいました。。</p>
+<h2 id="HTML_ファイルは圧縮しないの…？">HTML ファイルは圧縮しないの…？</h2><p>私が普段、他所様のソースコードを拝見する限りではHTMLファイルのソースコードを圧縮しているものもありますし、していないものもありますが、圧縮していないことが圧倒的に多いような気がしていました。（CSS/JSは圧縮しているのに！）</p>
+<p>で、その疑問を深夜の@webcre8さんに投げかけたところ、氏の書いた<a href="http://webcre8.jp/investigate/html-implied-specifications.html#title4" target="_blank" rel="external">過去記事</a>の「要素間ホワイトスペース」にあるようなお話をしてくださいました。</p>
 <h3 id="HTMLには要素間ホワイトスペースが存在する">HTMLには要素間ホワイトスペースが存在する</h3><p>上記記事には、</p>
 <blockquote>
 <p>スペースは通常半角を使うと思いますが、ここで代わりに全角スペースを使うと、それは要素間ホワイトスペースとはみなされません。それを利用して自由に間隔をとる人もいたりするのですが、半角スペースは改行やインデントの様に記号として存在するものであり、全角スペースは日本語にしか存在しないれっきとした文字です。見えないひらがなを置いているのと同じで、タグとタグの間にあるべきものではありません。</p>
@@ -109,18 +109,24 @@
 <p>要素と要素の間にある連続したスペース、タブ、改行タグは全て一つの要素間ホワイトスペースと見なされているからです。</p>
 </blockquote>
 <p>とのことです。</p>
-<p>この説明を踏まえて、「HTMLを圧縮してスペースや改行を取り除いたHTMLのソースコードは、圧縮の前後で全く同じHTMLのソースコードは言えない。」というお話です。@webcre8さんの記事をじっくり読むといいかもしれません。</p>
+<p>この説明を踏まえて、「HTMLを圧縮してスペースや改行を取り除いたHTMLのソースコードは、圧縮の前後で全く同じHTMLのソースコードは言えない。」という内容の話をしました。@webcre8さんの記事をじっくり読むといいかもしれません。</p>
 <p>この記事ではこのあと、<code>display: inline;</code>や<code>display: inline-block;</code>を使ったリストの横並び表示をした際に、横並びのリスト間に隙間ができることについて説明されています。</p>
 <blockquote>
 <p>前述の説明で、なぜ横並びのリストの間に隙間が出来るかがわかったと思います。これはli要素をインライン扱いにしたことによってli要素間に要素間ホワイトスペースができている、というわけです。</p>
 </blockquote>
-<p><code>&lt;li&gt;〜&lt;/li&gt;</code>ごとに改行をしたリストの<code>li</code>に、<code>display: inline;</code>や<code>display: inline-block;</code>を指定した場合、リスト間に隙間ができる。<br>この<code>&lt;li&gt;〜&lt;/li&gt;</code>を改行せず（スペースも入れず）書いて表示させると、リスト間の隙間はできない。<br>これが、圧縮（改行やスペースを削除）の前後で同じHTMLとはいえない　の例ですね。</p>
-<h3 id="preの話"><code>pre</code>の話</h3><p>あとは<code>&lt;pre&gt;</code>の話です。<br><code>&lt;pre&gt;</code>内は改行もスペースもソースコード通りに表示されますね。<br>試しにぐぐって出てきたHTMLソースコードの圧縮ツールのうちいくつかで、圧縮を試してみたのですが、今回試したものに関しては全て<code>&lt;pre&gt;</code>内の改行も削除されてしまいました。<br>当然そのHTMLファイルを表示すると、元々意図的に改行やらスペースを含めていた<code>&lt;pre&gt;</code>内とは異なる、それらが削除されたものが表示されるわけです。当然ですが。<br>たまたまそのとき見ていた<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんの記事ページのソースコードを見ると、<code>&lt;pre&gt;</code>内のみ改行やスペースが保持され、それ以外の改行やスペースは削除されていました。（さらっと見ただけなので、正確ではありませんが。）<br>この<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんのような圧縮であれば、<code>&lt;pre&gt;</code>内は正しく表示され、圧縮したことで表示に対する影響は大きくないのではないかと思います。</p>
-<h3 id="preのスペース・改行を保持したとしても"><code>pre</code>のスペース・改行を保持したとしても</h3><p>話を少し戻して、@webcre8さんの記事にあった「要素間ホワイトスペース」の存在を考えると、<code>&lt;pre&gt;</code>内の改行が保持されていようと、圧縮前後のソースコードが同じものとは言えないのではないかと思います。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト１<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト２<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト３<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>この<code>&lt;li&gt;</code>に、<code>display: inline;</code>や<code>display: inline-block;</code>を指定して横並びのリストをつくろうとします。<br>で、表示するとリスト間に小さな隙間ができます。<br>これを<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト１<span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト２<span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span>&gt;</span>リスト３<span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>こんな感じに改行とスペースを削除して、<code>display: inline;</code>や<code>display: inline-block;</code>を指定して表示させると、リスト間の隙間がなくなるのですねー。</p>
+<p>これが、「圧縮（改行やスペースを削除）前後のソースコードは同じものと言えない」ってことなのかと思います。</p>
+<h3 id="preの話"><code>pre</code>の話</h3><p>あとは<code>&lt;pre&gt;</code>の話です。<br><code>&lt;pre&gt;</code>内は改行もスペースもソースコード通りに表示されますね。<br>試しにぐぐって出てきたHTMLソースコードの圧縮ツールのうちいくつかで、圧縮を試してみたのですが、今回試したものに関しては全て<code>&lt;pre&gt;</code>内の改行も削除されてしまいました。<br>    そのHTMLファイルをブラウザで表示すると、元々含まれていた改行やスペースが削除された<code>&lt;pre&gt;〜&lt;/pre&gt;</code>が表示されるわけです。<br>たまたまそのとき見ていた<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんの<a href="有料コンテンツのソースコードを見ていたのでリンクはしまんでした。あと、どの記事のソースコードを見ていたのだったか忘れました。">^1</a>ソースコードを見ると、<code>&lt;pre&gt;</code>内の改行やスペースのみ保持され、それ以外の改行やスペースは削除されている感じでした。（違うかも。）<br>この<a href="http://www.codegrid.net/" target="_blank" rel="external">CodeGrid</a>さんのような圧縮であれば、<code>&lt;pre&gt;</code>内は正しく表示され、圧縮による表示への影響は大きくないのではないかと思います。</p>
+<h3 id="preのスペース・改行を保持したとしても"><code>pre</code>のスペース・改行を保持したとしても</h3><p>話を少し戻して、@webcre8さんの記事にあった「要素間ホワイトスペース」の存在を考えると、<code>&lt;pre&gt;</code>内の改行が保持されていようと、圧縮前後のソースコードが同じものとは言えないですよねーというお話になりました。</p>
 <p>圧縮したらファイルサイズが小さくなるわけですね。で、そのとき圧縮前後のソースコードが必ずしも「同じもの」でなければならないとは私は思いません。（HTML詳しくないので、なんとなくそう思うだけです。）<br>ただ、HTMLのソースコードを見る・読むのが個人的に好きなので、圧縮されてないほうが読みやすくていいなあと思います。</p>
 <p>はじめ@webcre8さんにこれについて聞いた時に「HTMLは文書だし、スペースも行間も意味あるんだからむやみに消さんほうがいいでしょ」的なことをおっしゃっていたのですが、<br>私の頭が追いつけず、@webcre8さんにはだいぶ長い時間お付き合い頂きました。ありがとうございます。<br>正直しっくりこない部分もあるのですが、以上のような理由で圧縮ツールにかけないほうがよさそうだね〜（<code>&lt;pre&gt;</code>内のスペースや改行が削除されてしまうツールも多いので）って話で一旦終わりになりました。</p>
 <p>もし違う意見がある方がいらっしゃいましたら、お聞かせいただけますと大変嬉しいです。</p>
 <p>おわり！</p>
+<h3 id="追記">追記</h3><ul>
+<li>2015-10-06 @debiruさんが記事書いてくださいました。<br><a href="http://debiru.hatenablog.com/entry/20151006/no-more-compress" target="_blank" rel="external">http://debiru.hatenablog.com/entry/20151006/no-more-compress</a><br>ありがとうございます。<br>記事の内容と関係ありませんが、no-more-compressっていうのがかっこいいと思います。（NO MORE LIESっぽいです。COMPLEXの）</li>
+</ul>
 
       
     </div>
