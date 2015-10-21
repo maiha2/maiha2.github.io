@@ -8,7 +8,7 @@
   <meta name="description" content="memorandum">
 <meta property="og:type" content="website">
 <meta property="og:title" content="mtdew2">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://mtdew2.com/index.html">
 <meta property="og:site_name" content="mtdew2">
 <meta property="og:description" content="memorandum">
 <meta name="twitter:card" content="summary">
@@ -71,6 +71,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css-module-is-xxx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+      <header class="article-header">
+        
+  
+    <a class="article-title" href="/2015/10/20/css-module-is-xxx/">仕様書が読めないけどCSS仕様書もくもく会やってる話</a>
+  
+
+      </header>
+    
+    <time class="article-date" datetime="2015-10-20T00:24:32.000Z" itemprop="datePublished">10-20-2015</time>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>このブログの<a href="http://mtdew2.com/2015/09/03/back-to-basics-css/">最初の記事</a>で、CSS仕様書もくもく会やりたい〜などど宣った結果、@kubosho_さんのおかげで、<a href="http://tokyo-css-module-specs.connpass.com/event/21413/" target="_blank" rel="external">W3C CSS Module 仕様書もくもく会</a>をやっています。（明日第二回目、開催します！）<br>言い出しっぺが私なので形式上主催者となっていますが、言い出した時点では仕様書のことなんて１個もわかりませんでした。</p>
+<p>それから今日まで約１ヶ月半、少なくとも一瞬は每日仕様書（の日本語訳）を見るようにしてきました。それについてメモしておきます。<br>仕様書に興味あるけど、コレ読むの辛ぃ…と思ってる人がいたら参考になるかもしれません。</p>
+<h2 id="やってきたこと">やってきたこと</h2><h3 id="慣れるために">慣れるために</h3><ul>
+<li>第一回CSS仕様書もくもく会のテーマだった<a href="http://standards.mitsue.co.jp/resources/w3c/TR/css3-selectors/" target="_blank" rel="external">セレクタ Level 3</a>を流し見する（每日）</li>
+<li>仕事中、CSSについて調べることがあったときは、仕様書を読む必要がなくても仕様書のその項目に目を通す</li>
+<li>@momdo_さんのCSS関連ツイートを見かけたら、仕様書を読む</li>
+</ul>
+<h4 id="流し見">流し見</h4><p>仕様書と呼ばれるもの全般について思うことですが、日本語が難しいのでしっかり読もうとすると挫けます。（何度か挫けました）<br>しかし、そこで挫けていては何も始まりませんので、ペロペローっとなんとなく、読んでる風に眺めることを続けました。今でも、しっかり通読することはできていませんが、以前に比べると読むことに抵抗がなくなってきていると感じます。<br>ちなみに、第二回もくもく会のテーマがColor Moduleに決まってからは、そっちも読んでます。</p>
+<h4 id="調べるついでに仕様書">調べるついでに仕様書</h4><p>業務でのコーディング中などに、CSSについて調べるときは、ついでに必ず仕様書を読む！ようにしたのもよかったと思います。<br>これも、流し見と同様、おカタイ文で書かれた仕様書に慣れることの役に立ちましたし、なかなか読む機会がないであろう仕様にも目を通すことができました。</p>
+<h4 id="@momdo_さん">@momdo_さん</h4><p>もんどさんは、グッドなペースでCSSについて呟いてくださるので、もんどさんのツイート見たら仕様書読む！みたいな、トリガーにさせていただいてます。（もんどさん、ありがとうございます。）</p>
+<h3 id="ちゃんと読むために">ちゃんと読むために</h3><ul>
+<li>基本の前の基礎知識 - Back to Basics CSS - <a href="http://unformedbuilding.com/slide/back-to-basics-2015-08-30/" target="_blank" rel="external">http://unformedbuilding.com/slide/back-to-basics-2015-08-30/</a></li>
+<li>W3Cスタイルシート仕様の歩き方みたいなもの（メモ） - <a href="http://momdo.hatenablog.jp/entry/20150911/1441977908" target="_blank" rel="external">http://momdo.hatenablog.jp/entry/20150911/1441977908</a></li>
+<li>W3C勧告プロセスの概要 - <a href="http://www.kanzaki.com/w3c/process.html" target="_blank" rel="external">http://www.kanzaki.com/w3c/process.html</a></li>
+</ul>
+<p>普段は基本流し見しかしませんが、時間をつくってちゃんと読んだりもします。<br><a href="http://unformedbuilding.com/slide/back-to-basics-2015-08-30/" target="_blank" rel="external">まとりさんのスライド</a>には、先日のBack to Basics CSS当日も、その後も本当に助けられています。<br>そして、<a href="http://momdo.hatenablog.jp/entry/20150911/1441977908" target="_blank" rel="external">もんどさんの記事</a>。もんどさんが書かれているとおり、仕様書に対する熱が下がってきたと言いますか、心が折れかけていた頃に投下してくださいましたので、今でもモチベーションが下がってきた時は、この記事を読みなおして奮起してます。</p>
+<p>あと！W3C勧告プロセス！恥ずかしいことに、これをよくわかっていませんでした。<a href="http://momdo.s35.xrea.com/web-html-test/CSS3-ja/" target="_blank" rel="external">CSSの日本語訳集</a>の表のRECとかEDとか見ても、なんだそれ状態でした。<br>これは知っておかなきゃいけなかったと思います。（仕様書読み始めた頃は、あまり意識してなかったのです）</p>
+<h2 id="やってみて今思うこと">やってみて今思うこと</h2><h3 id="なぜ今まで仕様書に出会わなかったのか">なぜ今まで仕様書に出会わなかったのか</h3><p>私はもっともっとも〜〜〜〜っと早くに、仕様書をちゃんと読んでいたら今より素敵な人生を送れていたかもしれない。あのときハマったアレは、仕様書を読んでいれば、なんてことない当たり前の結果だったのかもしれない…。</p>
+<p>思い起こせばCSSを書き始めた十数年前から、CSSについてずっと調べてきたはずなのに、一度も仕様書に出会うことはありませんでした。（私が仕様書を軽視していて、目に触れることがあっても、気に留めていなかっただけかもしれないが）読まなくても生きていけるし、コーディングのお仕事できるけど、仕様書読めばもうちょっと幸せになれるのでは、と少し思います。</p>
+<p>私は幸せになりたいので、これからも積極的にいろんな仕様書を読んでいこうと思っております。</p>
+<p>覚えることたくさんだ〜！おわり！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mtdew2.com/2015/10/20/css-module-is-xxx/" data-id="cig05plvb000bkjwjpbx5nurj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/W3C-仕様書/">W3C,仕様書</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-web-security-seminar" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -113,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/05/web-security-seminar/" data-id="cifg99tqq000e1vw3llgdsnae" class="article-share-link">Share</a>
+      <a data-url="http://mtdew2.com/2015/10/05/web-security-seminar/" data-id="cig05plve000ekjwji8nyrkup" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li></ul>
@@ -146,7 +200,7 @@
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>誰にも言わずにひっそり、こういう記事を先月書きました。<br><a href="http://mtdew2.com/2015/09/15/why-to-compress-javascript/" target="_blank" rel="external">http://mtdew2.com/2015/09/15/why-to-compress-javascript/</a></p>
+        <p>誰にも言わずにひっそり、こういう記事を先月書きました。<br><a href="http://mtdew2.com/2015/09/15/why-to-compress-javascript/">http://mtdew2.com/2015/09/15/why-to-compress-javascript/</a></p>
 <p>誰かの役に立つとも、おもしろいとも思わなかったので、そっとしておいたのですが<br><a href="http://debiru.hatenablog.com/entry/20151002/css-back-to-basics" target="_blank" rel="external">某氏の記事</a>からリンクしていただき、思ってたより多くの方の目に触れることになったようで非常に恥ずかしいです。<br>まとまっておらず申し訳ありません。<br>ひっそり書いた記事の終盤で、HTMLはなぜ圧縮しないのか（する必要がないのか）というようなことを書き、それについて@webcre8さんに相談にのってもらっていたので、そこを改めて書こうと思います。</p>
 <h2 id="HTML_ファイルは圧縮しないの…？">HTML ファイルは圧縮しないの…？</h2><p>私が普段、他所様のソースコードを拝見する限りではHTMLファイルのソースコードを圧縮しているものもありますし、していないものもありますが、圧縮していないことが圧倒的に多いような気がしていました。（CSS/JSは圧縮しているのに！）</p>
 <p>で、その疑問を深夜の@webcre8さんに投げかけたところ、氏の書いた<a href="http://webcre8.jp/investigate/html-implied-specifications.html#title4" target="_blank" rel="external">過去記事</a>の「要素間ホワイトスペース」にあるようなお話をしてくださいました。</p>
@@ -181,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/04/compress-html/" data-id="cifg99tqu000i1vw3kcz1jfi6" class="article-share-link">Share</a>
+      <a data-url="http://mtdew2.com/2015/10/04/compress-html/" data-id="cig05plvh000ikjwjhdrs3aye" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -251,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/15/why-to-compress-javascript/" data-id="cifg99tq000011vw39i027pbg" class="article-share-link">Share</a>
+      <a data-url="http://mtdew2.com/2015/09/15/why-to-compress-javascript/" data-id="cig05plux0001kjwj6suzki92" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -377,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/09/03/back-to-basics-css/" data-id="cifg99tqg00061vw38qqgmtax" class="article-share-link">Share</a>
+      <a data-url="http://mtdew2.com/2015/09/03/back-to-basics-css/" data-id="cig05plv70006kjwjntvptsb8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
