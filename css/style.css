@@ -599,14 +599,14 @@ pre .deletion {
   vertical-align: super;
 }
 .entry-content p {
-  margin: 0 0 1em 0;
+  margin: 0 0 2em 0;
 }
 .entry-content img,
 .entry-content video {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   display: block;
-  margin: auto;
+  margin: 1.5em auto 5em;
 }
 .entry-content a[title*="Flickr"] img {
   height: auto !important;
